@@ -2,7 +2,8 @@
   
   const stepElems = document.querySelectorAll('.step');
   const graphicElems = document.querySelectorAll('.graphic-item');
-  let currentItem; // 현재 활성화된 (visible 클래스가 붙은) .graphic-item을 지정
+  // 현재 활성화된 (visible 클래스가 붙은) .graphic-item을 지정
+  let currentItem = graphicElems[0]; 
 
   for (let i = 0; i < stepElems.length; i++) {
     // stepElems[i].setAttribute('data-index', i);
@@ -10,6 +11,14 @@
     graphicElems[i].dataset.index = i;
   }
   
+  function activate() {
+    currentItem.classList.add('visible'); 
+  }
+
+  function inactivate() {
+    currentItem.classList.remove('visible');
+  }
+
   window.addEventListener('scroll', () => {
     let step;
     let boundingRect;
@@ -18,19 +27,17 @@
       step = stepElems[i];
       boundingRect = step.getBoundingClientRect();
       //console.log(boundingRect.top);
-
       if (boundingRect.top > window.innerHeight * 0.1 && 
         boundingRect.top < window.innerHeight * 0.8) {
         //console.log(step.dataset.index);
-
-        if (currentItem) {
-          currentItem.classList.remove('visible');
-        }
-        
+        inactivate();
         currentItem = graphicElems[step.dataset.index];
-        currentItem.classList.add('visible'); 
+        activate();
       }
     }
   });
+
+  activate();
+
 })();
 
