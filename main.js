@@ -67,7 +67,7 @@
       if (boundingRect.top > window.innerHeight * 0.1 && 
         boundingRect.top < window.innerHeight * 0.8) {
         //console.log(step.dataset.index);
-        inactivate();
+        inactivate(currentItem.dataset.action);
         currentItem = graphicElems[step.dataset.index];
         activate(currentItem.dataset.action);
       }
