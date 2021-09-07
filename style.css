@@ -54,11 +54,17 @@ img {
   position: relative;
 }
 .step {
+  width: 70%;
+  margin: 0 auto;
   margin-bottom: 60vh;
   padding: 0.5rem 1rem;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.8);
   box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+}
+.mung {
+  text-align: center;
+  font-size: 13px;
 }
 .bird {
   position: absolute;
