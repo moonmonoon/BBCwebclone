@@ -42,6 +42,7 @@ img {
   height: 100%;
   opacity: 0;
   transition: 0.5s;
+  will-change: opacity;
 }
 .visible {
   opacity: 1;
@@ -70,4 +71,8 @@ img {
 [data-index="5"] .bird {
   left: 30%;
   bottom: 30%;
+}
+.global-footer {
+  padding: 2rem 0;
+  text-align: center;
 }
